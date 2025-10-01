@@ -1,0 +1,610 @@
+/* ===== БАЗА ===== */
+@font-face{font-family:"ManropeBold";src:url(../fonts/Manrope-Bold.ttf)}
+@font-face{font-family:"Manrope";src:url(../fonts/Manrope-Regular.ttf)}
+@font-face{font-family:"ManropeLight";src:url(../fonts/Manrope-Light.ttf)}
+
+*{margin:0;padding:0;box-sizing:border-box;outline:none;font-family:"Manrope",sans-serif}
+:root{
+  --cta-title-shift:220px; /* сдвиг заголовка вверх в CTA-низе */
+  --cta-btn-shift:20px;    /* сдвиг кнопки вниз в CTA-низе   */
+  --footer-gap:50px;       /* расстояния в футере            */
+}
+
+body{
+  background:#031b34;
+  padding:0 2rem;
+  position:relative;
+  overflow-x:clip;
+}
+.page{display:flex;flex-direction:column;align-items:center;width:100%;position:relative;z-index:1}
+
+a{color:#fff;text-decoration:none;cursor:pointer;transition:.3s}
+a:hover{opacity:.9}
+button{cursor:pointer;transition:.3s}
+button:hover{background-color:#ae67fa}
+
+ul li{list-style:none}
+h1{font-size:60px;color:#ae67fa}
+h2{font-size:34px}
+h1,h2{
+  font-family:"ManropeBold",sans-serif;
+  background:linear-gradient(90deg,#ae67fa 1.84%,#f49867 102.67%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+h3{font-family:"ManropeBold",sans-serif;color:#fff;font-size:24px}
+p{font-size:16px;color:#fff}
+.btn{display:flex;padding:1rem 2rem;background:transparent;color:#fff;border:none;font-size:16px;border-radius:5px}
+.primary-btn{background-color:#ff4820}
+.section{max-width:1169px;width:100%}
+.lined_header{background:url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;padding:1rem 0}
+
+/* ===== ШАПКА ===== */
+.section.header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:2rem 0;background:transparent;position:static
+}
+.header .header-logo{width:162px}
+.header .header__menu .menu{display:flex;column-gap:2rem}
+.header .header__menu .menu .menu__item a{color:#fff;border-bottom:1px solid transparent}
+.header .header__menu .menu .menu__item:hover a{border-bottom-color:#fff}
+.header .header__menu .menu .menu__item.active a{color:#f49867;border-bottom-color:#f49867}
+.header .cta_buttons{display:flex;column-gap:1rem}
+.header .header__menu .menu .menu__item.active a{color: #fff;border-bottom-color: transparent;}
+.header .header__menu .menu .menu__item.active:hover a{border-bottom-color: #fff;}
+
+/* ===== ХЕРО-СЕКЦИЯ ===== */
+.hero_section{
+  display:flex;justify-content:space-between;column-gap:1rem;min-height:60vh;
+  margin:6rem 0 3rem;
+}
+.hero_section .hero_section__left{
+  height:100%;display:flex;flex-direction:column;justify-content:center;row-gap:3rem;width:75%
+}
+.hero_section .hero_section__left .left__description{color:#81afdd}
+.hero_section .hero_section__left .left__cta_buttons{display:flex;width:100%}
+.hero_section .hero_section__left .left__cta_buttons input[type="text"]{
+  min-width:250px;width:70%;padding:8px 32px;border-radius:4px 0 0 4px;border:1px solid #052d56;border-bottom:none;background:#052d56
+}
+.hero_section .hero_section__left .left__cta_buttons .btn{border-radius:0 4px 4px 0}
+.hero_section .hero_section__right{height:100%}
+.hero_section .hero_section__right img{width:100%}
+
+/* ===== БРЕНДЫ ===== */
+.brands_section{display:flex;justify-content:center;align-items:center;padding:0 0 6rem;column-gap:3rem}
+
+/* ===== БЛОК "ЧТО ТАКОЕ GPT" ===== */
+.what_is_chatgpt_section{
+  display:flex;flex-direction:column;padding:3rem;margin:6rem 0;row-gap:7rem;
+  background:url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0/cover
+}
+.what_is_chatgpt_section .what_is_chatgpt_section__top{display:flex}
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header{flex:30%}
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content{flex:65%;color:#81afdd;font-size:14px}
+.what_is_chatgpt_section .what_is_chatgpt_section__middle{display:flex;justify-content:space-between;align-items:start}
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header{width:500px}
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a{color:#ff8a71;font-size:16px;border-bottom:1px solid transparent}
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover{border-bottom:1px solid #ff8a71;transition:.3s}
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom{display:flex;justify-content:space-between;align-items:start;column-gap:2rem}
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container{display:flex;flex-direction:column;row-gap:2rem}
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container .container__content{color:#81afdd;font-size:14px;line-height:1.8}
+
+/* ===== БУДУЩЕЕ ===== */
+.future_here{display:flex;column-gap:6rem;margin:6rem 0 2rem}
+.future_here .future_here__left{display:flex;flex-direction:column;align-items:flex-start;row-gap:2rem;flex:2}
+.future_here .future_here__left .left__cta{color:#f49867;border-bottom:1px solid transparent}
+.future_here .future_here__left a:hover{border-bottom:1px solid #f49867;transition:.3s}
+.future_here .future_here__right{flex:3;display:flex;flex-direction:column;row-gap:3rem}
+.future_here .future_here__right .right__container{display:flex;justify-content:space-between}
+.future_here .future_here__right .right__container .container__header{width:35%}
+.future_here .future_here__right .right__container .container__content{width:55%;color:#81afdd}
+
+/* ===== ФОН-БЛЮРЫ ===== */
+.bg-blurs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.blur{
+  position:absolute;display:block;border-radius:50%;
+  --alpha:1;--blur:280px;--bright:2;--sat:1.4;
+  filter:blur(var(--blur)) brightness(var(--bright)) saturate(var(--sat));
+  opacity:var(--alpha);mix-blend-mode:screen;background-blend-mode:screen;
+  --core:rgba(60,162,255,.7);
+  background:radial-gradient(closest-side,var(--core) 0%,transparent 65%)
+}
+.blur--1{width:1013px;height:1013px;top:-290px;left:-409px;--core:rgba(7,50,95,1)}
+.blur--2{width:701px;height:496px;top:500px;left:1127px;--core:rgba(7,45,86,1)}
+.blur--3{width:777px;height:777px;top:1712px;left:-444px;--core:rgba(7,50,95,1)}
+
+/* ===== НИЗ: ПОЛОСА, CTA, ФУТЕР ===== */
+.bottom-band{
+  position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+  background:#031B34;min-height:950px;padding:200px 0 60px
+}
+.bottom-band > .section{max-width:1169px;width:100%;margin:0 auto;padding-inline:2rem}
+
+.cta_bottom{position:relative;text-align:center;margin:0;padding:0;min-height:480px}
+.cta_bottom__title{
+  font-family:Manrope,sans-serif;font-weight:800;font-size:62px;line-height:75px;letter-spacing:-.04em;text-align:center;
+  position:absolute;left:50%;top:calc(50% - var(--cta-title-shift));transform:translate(-50%,-50%);margin:0;
+  inline-size:min(90vw,980px);white-space:normal;word-break:keep-all
+}
+.page .cta_bottom .cta_bottom__btn{
+  position:absolute;left:50%;top:calc(50% + var(--cta-btn-shift));transform:translate(-50%,-50%);
+  width:337.58px;height:65px;padding:0;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #fff !important;border-radius:0;background:transparent;color:#fff
+}
+.page .cta_bottom .cta_bottom__btn:hover{background:#ae67fa;border-color:#ae67fa}
+
+.footer{padding:4rem 0 2rem;border-top:none}
+.footer__top{display:flex;gap:3rem;align-items:flex-start}
+.footer__brand{flex:1.5}
+.footer__brand .brand__logo{display:block;width:162px;height:auto;margin-bottom:var(--footer-gap)}
+.footer__brand p{color:#81afdd;margin-top:.75rem}
+
+.footer__cols{flex:2.5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 4rem}
+.footer__col{display:flex;flex-direction:column;gap:var(--footer-gap)}
+.footer__col .col__title{margin:0}
+.footer__col .col__list{display:flex;flex-direction:column;gap:var(--footer-gap);padding:0}
+.footer__link{display:block;color:#81afdd;font-size:14px;margin:0;line-height:1.3}
+.footer__link:hover{color:#fff}
+
+/* копирайт — компактно и по центру */
+.footer--copyright{padding:8px 0 10px}
+.footer--copyright .footer__bottom{margin-top:0;text-align:center}
+.footer--copyright .footer__bottom small{display:inline-block;opacity:.9}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width:1024px){
+  .footer__top{flex-direction:column}
+  .footer__cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .footer__cols{grid-template-columns:1fr}
+  .cta_bottom__title{font-size:28px;line-height:36px;inline-size:90vw}
+}
+/* ----- Шапка ----- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: nowrap;
+}
+
+/* меню */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+
+.item__link {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent; /* фиксируем высоту сразу */
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.item__link:hover {
+  color: #FF8A71;
+  border-bottom: 2px solid #FF8A71; /* проявляется при hover */
+}
+
+/* кнопки справа */
+.cta_buttons {
+  display: flex;
+  gap: 15px;
+    flex-shrink: 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 2px solid transparent; /* рамка есть всегда */
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+  border-color: #FF8A71;
+  color: #FF8A71;
+}
+
+.primary-btn {
+  background: #FF8A71;
+  border: 2px solid #FF8A71;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.primary-btn:hover {
+  background: transparent;
+  color: #FF8A71;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Manrope', sans-serif;
+        background: #040C18;
+        color: #fff;
+      }
+
+      .container {
+        width: 1440px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* ---------- Feature block ---------- */
+
+    .left__social_approve {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    }
+
+    .left__social_approve img {
+    height: 40px; /* или больше/меньше, зависит от people.png */
+    }
+
+    .left__social_approve p {
+    font-size: 12px;
+    color: #fff;
+    }
+
+
+      .feature {
+        display: flex;
+        min-height: 600px;
+        margin-bottom: 100px;
+
+      }
+
+      .feature-left {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 50px
+      }
+
+      .feature-left img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .feature-right {
+        width: 50%;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .pre-text {
+        font-size: 16px;
+        color: #81AFDD;
+        margin-bottom: 20px;
+      }
+
+      .feature-right h2 {
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 45px;
+        margin-bottom: 20px;
+        background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .feature-right p {
+        font-size: 16px;
+        line-height: 30px;
+        color: #81AFDD;
+        margin-bottom: 20px;
+      }
+
+      .cta {
+        font-size: 16px;
+        font-weight: 500;
+        color: #FF8A71;
+        cursor: pointer;
+      }
+
+      /* ---------- CTA Section ---------- */
+      .cta-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+      }
+
+      .cta-box {
+        width: 1170px;
+        max-width: 100%;
+        background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10.7px;
+        padding: 30px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .cta-texts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 866px;
+      }
+
+      .cta-pre {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 30px;
+        color: #0E0E0E;
+      }
+
+      .cta-title {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 35px;
+        color: #000000;
+      }
+
+      .cta-button {
+        width: 189px;
+        height: 59px;
+        background: #000000;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .cta-button span {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        color: #FFFFFF;
+      }
+
+      /* ---------- News Section ---------- */
+
+      .news-section {
+        width: 1170px;
+        display: flex;
+        margin-bottom: 100px;
+        height:961px;
+        flex-direction:column;
+        gap: 116px;
+      }
+
+      .mnogoe {
+        font-weight: 800;
+        font-size: 62px;
+        line-height: 75px;
+        background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing:-0.04em;
+      }
+
+      .news-box {
+        width: 100%;
+        display:grid;
+        grid-template-columns:1.3fr 1fr 1fr;
+        grid-auto-rows:323px;
+        gap:48px;
+      }
+
+      .big-news {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        width: 418px;
+        height: 695px;
+      }
+
+      .big-news img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .big-news div {
+        padding: 14px 18px 16px;
+        background: #042C54;
+        height: 407px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .big-news h {
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      .big-news span {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 35px;
+        font-family: "ManropeLight", sans-serif;
+      }
+
+      .big-news a {
+        margin-top: auto;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 35px;
+        font-family: "ManropeLight", sans-serif;
+      }
+
+      .small-news {
+        width: 327px;
+        height: 323px;
+      }
+
+      .small-news img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .small-news div {
+        background: #042C54;
+        padding:14px 18px 16px;
+        height: 193px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .small-news h {
+        font-weight: 800;
+        font-size: 19px;
+        line-height: 30px;
+      }
+
+      .small-news span {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 35px;
+        font-family: "ManropeLight", sans-serif;
+      }
+
+      .small-news a {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 35px;
+        margin-top: auto;
+        font-family: "ManropeLight", sans-serif;
+      }
+
+      /* FIX: наш более специфичный селектор .section.header перекрывал препода.
+   Зеркалим ключевые свойства препода, чтобы шапка стала fixed и работал адаптив. */
+.section.header{
+  position: fixed;
+  background: #031b34;
+  padding: 2rem 0;
+  top: 0; left: 0; right: 0;
+  /* центрирование и ширина как у section: */
+  max-width: 1169px; width: 100%; margin: 0 auto;
+  z-index: 9999;
+}
+
+/* === PROF core (оставляем без изменений) === */
+.header .header__menu .menu{display:flex;column-gap:2rem}
+.header .header__right{
+  display:flex;justify-content:flex-end;align-items:center;column-gap:2rem;
+  opacity:1;visibility:visible;transition:all .3s ease
+}
+.header .header__right.hidden{opacity:0;visibility:hidden;transition:all .3s ease}
+.header .header__right .menu__close{width:38px;height:38px}
+.header .header__right .menu__close.hidden{display:none}
+.header .header__menu .menu .menu__item a{color:#fff;border-bottom:1px solid transparent}
+.header .header__menu .menu .menu__item:hover a{border-bottom-color:#fff}
+.header .header__menu .menu .menu__item.active a{color:#f49867;border-bottom-color:#f49867}
+.header .header__burger_menu{display:flex;flex-direction:column;row-gap:.5rem;cursor:pointer}
+.header .header__burger_menu.hidden{display:none}
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line{
+  width:43px;height:5px;border-radius:2px;background:#fff
+}
+.header .header__right .menu__close .menu__line:nth-child(1){
+  position:relative;top:15px;right:4px;transform:rotate(45deg)
+}
+.header .header__right .menu__close .menu__line:nth-child(2){
+  position:relative;top:10px;right:3px;transform:rotate(-45deg)
+}
+/* скролл-лок, который дергает JS у препода */
+body.oh{overflow:hidden}
+
+/* === PROF hero spacing under fixed header === */
+.hero_section{
+  display:flex;justify-content:space-between;column-gap:1rem;
+  margin:14rem 0 3rem; /* важно: был 6rem — из-за fixed нужен больший верхний отступ */
+}
+
+/* === PROF @media 1024 === */
+@media screen and (max-width:1024px){
+  .page{align-content:center}
+  .header{padding:2rem}
+  .header .header__logo .logo__link img{width:200%}
+  .header .header__right{
+    flex-direction:column-reverse;justify-content:center;align-items:center;row-gap:53px;
+    position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100vh;z-index:9999;background:#031b34
+  }
+  .header .header__menu{display:flex;flex-direction:column;position:relative}
+  .header .header__menu .menu{flex-direction:column;align-items:center;row-gap:1rem}
+  .header .header__menu .menu__close{position:absolute;right:-100px;top:-100px}
+  .header .header__menu .menu .menu__item a{font-size:48px}
+
+  .hero_section{flex-direction:column;justify-content:center;column-gap:0;width:90%}
+  .hero_section .hero_section__left{width:100%;text-align:center}
+  .hero_section .hero_section__right{display:flex;justify-content:center}
+  .hero_section .hero_section__right img{width:60%}
+  .hero_section .hero_section__left .left__cta_buttons{justify-content:center}
+
+  .what_is_chatgpt_section{row-gap:4rem}
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle{flex-direction:column;row-gap:1rem}
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container{row-gap:0}
+
+  .future_here{column-gap:0;flex-direction:column;row-gap:4rem}
+  .future_here .future_here__left{row-gap:1rem}
+}
+
+/* === PROF @media 766 === */
+@media screen and (max-width:766px){
+  p{font-size:14px;line-height:1.5}
+  h1{font-size:46px}
+  h2{font-size:27px}
+  h3{font-size:19px}
+
+  .hero_section{width:100%}
+  .brands_section{margin-top:-15px;padding-bottom:0}
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top{flex-direction:column}
+  .hero_section .hero_section__right img{width:85%}
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header{width:auto}
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom{flex-direction:column;row-gap:2rem}
+  .what_is_chatgpt_section{row-gap:3rem;margin:6rem 0 0}
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container .container__content{line-height:1.5}
+}
+
+/* === PROF @media 765 === */
+@media screen and (max-width:765px){
+  a{font-size:12px}
+  p{font-size:12px}
+  h1{font-size:25px}
+  h2{font-size:19px}
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"]{min-width:auto}
+
+  .future_here{row-gap:3rem}
+  .future_here .future_here__right .right__container{flex-direction:column}
+  .future_here .future_here__right .right__container .container__header{width:100%}
+  .future_here .future_here__right .right__container .container__content{width:100%}
+  .future_here .future_here__right{row-gap:2rem}
+}
