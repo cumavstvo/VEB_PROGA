@@ -1,0 +1,15 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="interface.save_data_btn" />
+          <option value="interface.new_dialog_add_btn" />
+          <option value="interface.chn_data_btn" />
+          <option value="interface.del_data_btn" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
