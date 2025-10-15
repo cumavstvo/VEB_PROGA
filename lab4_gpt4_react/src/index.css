@@ -1,0 +1,1640 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: rgba(4, 12, 24, 1);
+  padding: 0 2rem;
+  overflow: auto;
+}
+
+body.oh {
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #031b34;
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .header__burger_menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+/* Стили для первого экрана (Хиро секция) */
+
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  /* min-height: 60vh; */
+  padding: 14rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Секция фотолупов */
+
+.fotolupi_inside {
+  display: flex;
+  flex-direction: row;
+  margin-top: -10px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.kruglishki {
+  display: flex;
+  align-items: center;
+}
+.persons {
+  margin-left: -10px;
+}
+
+.krugleshok {
+  width: 35px;
+  height: 35px;
+}
+
+.ellipse {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(19, 222, 210, 1);
+  border: 2px solid;
+  border-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+}
+
+.text_ellipse {
+  font-family: Manrope;
+  font-weight: 800;
+  line-height: 37px;
+  font-size: 8px;
+}
+
+.okolo_lits {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 37.61px;
+  letter-spacing: 0%;
+  color: rgba(255,255,255,1);
+
+}
+
+/* Секция брендов */
+
+.brands_section {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  column-gap: 3rem;
+}
+
+/* Что такое Chat GPT */
+
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 500px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 1px solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Будущее наступило */
+
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+}
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+}
+
+/* Будущее + женщина */
+
+.future_vr_women {
+  max-width: 1044px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin: 68px auto 0;
+}
+
+.future_vr_women .content {
+    margin-bottom: 40px;
+    max-width: 479px;
+}
+
+.future_vr_women h3 {
+  margin: 20px 0;
+}
+.future_vr_women p {
+  margin: 10px 0;
+}
+
+.future_vr_women .container__content {
+  color: #81afdd;
+}
+
+.future_vr_women a {
+  margin: 10px 0;
+}
+
+.future_vr_women .orangee {
+  color: #f49867;
+}
+
+.future_vr_women a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+/* градиентая вещица */
+.big_cta {
+  margin-top: 100px;
+}
+
+.big_cta {
+  background: linear-gradient(89.97deg, #AE67FA 2%, #F49867 98%);
+  width: 1170px;
+  height: 172px;
+  border-radius: 10px;
+  padding-top: 6px;
+}
+.rectangle_backg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 25px 40px;
+}
+
+.big_cta a{
+  color: black;
+  width: 1;
+}
+
+.under_a {
+  display: flex;
+  flex-direction: row;
+  gap: 300px;
+
+}
+.under_a h3 {
+  width: 866;
+  width: 55%;
+  font-family: Manrope;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.big_cta_btn {
+  width: 189px;
+  height: 59px;
+  background-color: black;
+  border-width: 0px;
+  border-radius: 40px;
+
+  color: white;
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* статьи */
+
+.yellow_press {
+    margin: 150px auto 100px;
+}
+
+.yellow_press {
+  width: 1171px;
+  height: 961px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
+
+.statyi {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statya_left img {
+  width: 417px;
+  height: 287px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box_under_img {
+  width: 417px;
+  height: 406px;
+  background-color: rgba(4, 44, 84, 1);
+}
+
+.box_inside_left {
+  width: 284px;
+  height: 357px;
+  margin: 0 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
+
+.box_inside_left p {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 11px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  margin-top: 40px;
+}
+
+.box_inside_left h3 {
+font-family: Manrope;
+font-weight: 800;
+font-size: 25.11px;
+line-height: 30.29px;
+letter-spacing: 0%;
+
+}
+
+.box_inside_left a {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 12px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  margin-top: 180px;
+}
+
+.two_left {
+  height: 693px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
+
+.two_right {
+  height: 693px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
+
+.malaya_statya {
+  display: flex;
+  flex-direction: column;
+}
+
+.two_left img {
+  width: 327px;
+  height: 130px;
+}
+
+.two_right img {
+  width: 327px;
+  height: 130px;
+}
+
+.korobka_under_img {
+  width: 327px;
+  height: 193px;
+  display: flex;
+  background-color: rgba(4, 44, 84, 1);
+}
+
+.box_inside {
+  width: 284px;
+  height: 172px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+
+}
+
+.box_inside p {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 11px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  margin-top: 10px;
+}
+
+.box_inside h3 {
+  font-family: Manrope;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+.box_inside a {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 12px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  margin-top: 10px;
+}
+
+/* низ */
+
+.just_footer {
+  width: 100%;
+  height: 950px;
+}
+
+.just_footer .on_big_back {
+  background-color: rgba(3, 27, 52, 1);
+  display: flex;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.inside_big_back {
+  width: 1171px;
+  height: 780px;
+  margin: 160px auto auto auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.inside_big_back h1 {
+  width: 821px;
+  height: 150px;
+  margin: 0 auto;
+  font-family: Manrope;
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+  letter-spacing: -4%;
+  text-align: center;
+}
+
+.last_repeat{
+  width: 337px;
+  height: 65px;
+  margin: 80px auto 180px auto;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 1);
+  background-color: rgba(3, 27, 52, 1);
+
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+
+.last_repeat:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info a {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.info p {
+  color: #81afdd;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.info h4 {
+  color: white;
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.info_gpt {
+  width: 186px;
+  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info_gpt img {
+  width: 118px;
+  height: 30px;
+}
+
+.info_links {
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.info_company {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.info_contacts {
+  width: 134px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.copyrights {
+  color: white;
+  margin: 5px;
+  font-family: Manrope;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+/* Медиа запросы для адаптива */
+
+@media screen and (max-width: 2560px) {
+  .hero_section {
+    min-height: 30vh;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .fotolupi_section {
+    margin-left: -20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    align-content: center;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 53px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 48px;
+  }
+
+  .hero_section {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    /* margin: 0; */
+    width: 90%;
+  }
+
+  .hero_section .hero_section__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 60%;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons {
+    justify-content: center;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 4rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+    row-gap: 0;
+  }
+
+  .future_here {
+    column-gap: 0;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .future_here .future_here__left {
+    row-gap: 1rem;
+  }
+
+  .header, .header__right{
+    max-width: 1024px;
+  }
+
+  .hero_section__right img {
+    margin-top: 130px;
+  }
+
+  .fotolupi_section {
+    width: 100%;
+    margin-top: -650px;
+  }
+
+  .fotolupi_inside {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .section.brands_section {
+    margin: 5px;
+    margin-top: 560px;
+  }
+
+  .brands_section {
+    margin-top: 70px;
+    padding: 0 0 0 0;
+  }
+
+  .brands_section img {
+    width: 15%;
+  }
+
+  .what_is_chatgpt_section {
+    margin-bottom: auto;
+  }
+
+  /* Будущее + женщина */
+
+  .future_vr_women {
+    margin-top: 100px;
+  }
+
+  /* градиентая вещица */
+
+  .big_cta {
+    max-width: 960px;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+  
+  .big_cta {
+    max-width: 960px;
+    padding-top: 5px;
+  }
+
+  .under_a {
+    gap: 200px;
+  }
+
+  /* статьи */
+
+  .yellow_press {
+    max-width: 100%;
+    margin-top: 100px;
+  }
+
+  .yellow_press {
+    width: 100%;
+  }
+
+  .statyi {
+    max-width: 960px;
+  }
+
+  .statya_left img {
+    width: 327px;
+    height: 225px;
+  }
+
+  .box_under_img {
+    width: 327px;
+    height: 468px;
+  }
+
+  .box_inside_left p {
+    margin-top: 10px;
+  }
+
+  .box_inside_left a {
+    margin-top: 284px;
+  }
+
+  .two_left img {
+    width: 260px;
+    height: 130px;
+  }
+
+  .two_right img {
+    width: 260px;
+    height: 130px;
+  }
+
+  .korobka_under_img {
+    width: 260px;
+    height: 193px;
+    display: flex;
+    background-color: rgba(4, 44, 84, 1);
+  }
+
+  /* низ */
+
+  .info_gpt {
+    margin: 0 120px 0 60px;
+  }
+
+  .info_contacts {
+    margin: 0 60px 0 0;
+  }
+
+}
+
+@media screen and (max-width: 769px) {
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+  .hero_section {
+    width: 100%;
+  }
+
+  .hero_section__right img {
+    margin-top: 130px;
+  }
+
+  .fotolupi_section {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -730px;
+  }
+
+  .brands_section {
+    margin: 5px;
+    margin-top: 670px;
+  }
+
+  .brands_section {
+    padding-bottom: 0;
+  }
+
+  .brands_section img {
+    margin-top: 100px;
+    width: 14%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 85%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    row-gap: 2rem;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 3rem;
+  }
+
+  .what_is_chatgpt_section {
+    margin: 6rem 0 0;
+  }
+
+  .what_is_chatgpt_section
+    .what_is_chatgpt_section__bottom
+    .bottom__container
+    .container__content {
+    line-height: 1.5;
+  }
+
+    /* Будущее + женщина */
+
+  .future_vr_women {
+    width: 100%;
+    height: auto;
+  }
+
+  .future_vr_women {
+    margin-top: 0px;
+  }
+
+ .future_vr_women img {
+    width: 50%;
+  }
+
+  /* градиентая вещица */
+
+  .big_cta {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+
+  .big_cta {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .under_a {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .under_a h3 {
+    line-height: 1;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .big_cta_btn {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  /* статьи */
+
+  .yellow_press {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: -100px;
+  }
+
+  .statyi {
+    flex-wrap: wrap;
+    margin-top: 80px;
+  }
+
+  .statyi a {
+    font-size: 14px;
+  }
+
+  .statyi p {
+    font-size: 12px;
+  }
+
+  .statyi h3 {
+    font-size: 18px;
+  }
+
+  .statya_left img {
+    width: 327px;
+    height: 225px;
+  }
+
+  .box_under_img {
+    width: 327px;
+    height: 468px;
+  }
+
+  .statya_left h3 {
+    font-size: 20px;
+  }
+
+  .statya_left a {
+    margin-top: 240px;
+  }
+
+  .korobka_under_img {
+    width: 327px;
+  }
+
+  .two_left img {
+    width: 327px;
+  }
+
+  .two_right img {
+    width: 327px;
+  }
+
+  .two_right {
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  .malaya_statya {
+    margin-bottom: 0;
+  }
+
+  /* низ */
+  
+  .just_footer {
+    height: auto;
+  }
+
+  .just_footer {
+    margin-top: -170px;
+    height: auto;
+  }
+
+  .on_big_back {
+    height: auto;
+  }
+
+  .inside_big_back {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .inside_big_back h1 {
+    width: 90%;
+    height: auto;
+    font-size: 40px;
+    line-height: 1.3;
+    margin: 0 auto;
+  }
+
+  .inside_big_back button {
+    width: 35%;
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 150px;
+  }
+
+  .info {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .info_gpt {
+    margin: 0 30px 0 30px;
+  }
+
+  .info_links {
+    margin: 0 0 50px 0;
+  }
+
+  .info_company {
+    margin: 0;
+  }
+
+  .info_contacts {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  a {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -20px;
+    top: -100px;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: auto;
+  }
+
+  .hero_section__right img {
+    margin-top: 140px;
+  }
+
+  .fotolupi_section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -440px;
+  }
+
+  .fotolupi_inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section.brands_section {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin-top: 310px;
+  }
+
+  .brands_section img {
+    width: 21%;
+    margin: 5px;
+  }
+
+  .future_here {
+    row-gap: 3rem;
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+  }
+
+  .future_here .future_here__right .right__container .container__header {
+    width: 100%;
+  }
+
+  .future_here .future_here__right .right__container .container__content {
+    width: 100%;
+  }
+
+  .future_here .future_here__right {
+    row-gap: 2rem;
+  }
+
+  /* Будущее + женщина */
+
+  .future_vr_women {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .future_vr_women .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .future_vr_women a, p {
+    text-align: center;
+  }
+
+  .future_vr_women img {
+    width: 100%;
+  }
+
+  /* градиентая вещица */
+
+  .big_cta {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+
+  .big_cta {
+    width: 100%;
+    height: auto;
+  }
+
+  .under_a {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .big_cta a {
+    text-align: center;
+  }
+
+  .under_a h3 {
+    line-height: 1;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .big_cta_btn {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  /* статьи */
+
+  .yellow_press {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+
+  .statyi {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .statyi a {
+    font-size: 14px;
+  }
+
+  .statyi p {
+    font-size: 12px;
+    margin-right: 200px;
+  }
+
+  .statyi h3 {
+    font-size: 18px;
+  }
+
+  .statya_left {
+    width: 100%;
+  }
+
+  .statya_left img {
+    width: 100%;
+    height: 246px;
+  }
+
+  .box_under_img {
+    width: 100%;
+    height: 349px;
+  }
+
+  .statya_left h3 {
+    font-size: 20px;
+  }
+
+  .statya_left a {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  .two_left img {
+    width: 100%;
+    height: 140px;
+  }
+
+  .two_right {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .two_right img {
+    width: 100%;
+    height: 140px;
+  }
+
+  .korobka_under_img {
+    width: 100%;
+  }
+
+  /* низ */
+
+  .just_footer {
+    margin-top: 50px;
+  }
+
+  .on_big_back {
+    height: auto;
+  }
+
+  .inside_big_back {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .inside_big_back h1 {
+    width: 90%;
+    height: auto;
+    font-size: 25px;
+    line-height: 1.3;
+    margin: 0 auto;
+  }
+
+  .inside_big_back button {
+    width: 55%;
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 150px;
+  }
+
+  .info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info a, h4, p {
+    text-align: center;
+  }
+
+  .info_gpt{
+   align-items: center;
+  }
+
+  .info_gpt {
+    margin: 30px;
+  }
+
+  .info_links {
+    margin: 30px;
+  }
+
+  .info_company {
+    margin: 30px;
+  }
+
+  .info_contacts {
+    margin: 30px;
+  }
+}
